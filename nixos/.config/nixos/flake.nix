@@ -44,6 +44,7 @@
      work = nixpkgs.lib.nixosSystem {
        specialArgs = { inherit predefinedVariables; inherit pkgs; inherit unstable; };
        modules = [
+          ./default/pkgs
           ./work/configuration.nix
           ./work/hardware-configuration.nix
           ./work/modules
