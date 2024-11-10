@@ -30,9 +30,10 @@
 
   {
    nixosConfigurations = {
-     home = nixpkgs.lib.nixosSystem {
-       specialArgs = { inherit system; inherit pkgs; inherit unstable; };
+     home = nixpkgs.lib.nixosSystem rec { # https://nix.dev/manual/nix/2.17/language/constructs
+       specialArgs = { inherit predefinedVariables; inherit pkgs; inherit unstable; };
        modules = [
+          ./default/pkgs
 	        ./default/modules
           ./home/configuration.nix
           ./home/hardware-configuration.nix
