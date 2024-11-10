@@ -6,5 +6,6 @@
   #networking.wireless.userControlled.enable = true;
   networking.networkmanager.enable = true;
   #networking.networkmanager.dns = "none";
+  networking.enableIPv6  = false;
 }
 

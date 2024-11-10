@@ -7,7 +7,9 @@
       ];
     exclude = [
       "/home/yasin/.cache/appimage-run/"
-      "/var/lib/systemd"
+      "/var/lib/systemd/"
+      "/home/yasin/.steam/"
+      "/home/yasin/.cache/"
     ];
     repo = "/borg-local";
     encryption = {
