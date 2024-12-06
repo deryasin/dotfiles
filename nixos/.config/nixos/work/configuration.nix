@@ -1,6 +1,7 @@
 # configuration.nix
 { system, config, pkgs, lib, ... }:
 {
+  boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   imports =
     [
       ./hardware-configuration.nix
