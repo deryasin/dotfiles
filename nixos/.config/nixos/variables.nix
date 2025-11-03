@@ -12,6 +12,6 @@ gitEmail = "yasin@tikdemir.net";
 editor = "vim";
 browser = "firefox";
 
-stateVersion = "23.11";
+stateVersion = "24.11";
 
 }

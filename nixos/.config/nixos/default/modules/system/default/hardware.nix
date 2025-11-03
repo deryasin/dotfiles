@@ -5,6 +5,9 @@
   security.rtkit.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  hardware.logitech.wireless.enable = true;
+  hardware.sane.enable = true; 
+
 #  hardware.opengl = {
 #    enable = true;
 #    driSupport = true;

@@ -2,6 +2,7 @@
 {
   pkgs,
   unstable,
+  winapps,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -32,7 +33,7 @@
     lazygit
     gdu
     bottom
-    unstable.rofi-wayland
+    rofi
     waybar
     swaybg
     swaylock-effects
@@ -51,13 +52,16 @@
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     swww
-    gnome.adwaita-icon-theme
+   adwaita-icon-theme
     eww
     gamescope
     grimblast
     stdenv.cc.cc.lib
-    python3
-    gtk2 gtk3 gtk4 tela-circle-icon-theme
+    python312Full
+    gtk2
+    gtk3
+    gtk4
+    tela-circle-icon-theme
     transmission_4-gtk
     gthumb
     cmatrix
@@ -78,8 +82,8 @@
     dig
     libGL
     libglvnd
-    vulkan-loader
-    vulkan-headers
+    #vulkan-loader
+    #vulkan-headers
     glxinfo
     pqiv
     light
@@ -93,18 +97,18 @@
     pqiv
     light
     logseq
-    nvidia-vaapi-driver
+    # nvidia-vaapi-driver
+
     vscodium
     sshpass
     ansible
-    libusb
+    libusb1
     wdisplays
     firefox
     atool
     unzip
     killall
     wireguard-tools
-    gnome.adwaita-icon-theme
     glib
     sshuttle
     libreoffice
@@ -124,22 +128,21 @@
     borgbackup
     libsecret
     vlc
-    cura
+    #cura
     rpi-imager
-    polkit-kde-agent
+    kdePackages.polkit-kde-agent-1
     remmina
     fuse3
     unstable.nh
     pika-backup
     gimp
-    nchat
     cool-retro-term
     kitty
     fx-cast-bridge
     gobject-introspection
     inetutils
     bc
-    gnome.zenity
+    zenity
     gradience
     wf-recorder
     lutris
@@ -159,7 +162,7 @@
     docker
     librecad
     arduino-ide
-    kdenlive
+    kdePackages.kdenlive
     minicom
     gparted
     xorg.xhost
@@ -173,30 +176,58 @@
     qt5.full
     qt6.full
     nix-index
-    kdePackages.wayland kdePackages.qtwayland kdePackages.qtsvg
-    kdePackages.kio-fuse kdePackages.kio-extras kdePackages.kde-cli-tools
-    libsForQt5.qt5.qtquickcontrols libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects libsForQt5.qt5ct
-    libsForQt5.qtstyleplugin-kvantum kdePackages.qtstyleplugin-kvantum
+    kdePackages.wayland
+    kdePackages.qtwayland
+    kdePackages.qtsvg
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
+    kdePackages.kde-cli-tools
+    #libsForQt5.qt5.qtquickcontrols
+   # kdePackages.qtquickcontrols
+    #libsForQt5.qt5.qtquickcontrols2
+   # kdePackages.qtquickcontrols2
+    #libsForQt5.qt5.qtgraphicaleffects
+   # kdePackages.qtgraphicaleffects
+    #libsForQt5.qt5ct
+    #libsForQ.qt5ct
+    #libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+    
+
+    kdePackages.qtstyleplugin-kvantum
     kdePackages.qt6ct
-    alacritty swaynotificationcenter
+    alacritty
+    swaynotificationcenter
     wlogout
     parallel
     udiskie
     polkit_gnome
     libinput-gestures
-    cliphist alacritty
+    cliphist
+    alacritty
     gtklock
-    where-is-my-sddm-theme brave
+    where-is-my-sddm-theme
+    brave
     blueman
-    lsd parallel unstable.pwvucontrol
-    swappy polkit_gnome libinput-gestures
+    lsd
+    parallel
+    unstable.pwvucontrol
+    swappy
+    polkit_gnome
+    libinput-gestures
     kdePackages.qtimageformats
-    kdePackages.ffmpegthumbs libnotify
-    nwg-look ark
-    dolphin kitty eza zsh-powerlevel10k
-    envsubst hyprcursor
-    gnumake tree
+    kdePackages.ffmpegthumbs
+    libnotify
+    nwg-look
+    kdePackages.ark
+    kdePackages.dolphin
+    kitty
+    eza
+    zsh-powerlevel10k
+    envsubst
+    hyprcursor
+    gnumake
+    tree
     papirus-icon-theme
     mission-center
     thefuck
@@ -204,8 +235,32 @@
     brave
     gsettings-qt
     qtcreator
-    libsForQt5.qt5.qtwayland qt5ct
-];
+    libsForQt5.qt5.qtwayland
+    lmstudio
+    angryipscanner
+    solaar
+    jdk17
+    anydesk
+    screen
+    nextcloud-talk-desktop
+    virtiofsd
+    unstable.quickshell
+    winapps.packages."${system}".winapps
+    winapps.packages."${system}".winapps-launcher
+    podman-tui
+    podman-compose
+    crun
+    conmon
+    skopeo 
+    slirp4netns 
+    fuse-overlayfs
+    dialog
+    freerdp3
+    freerdp
+    terraform
+    wireshark-qt
+    asciinema
+  ];
 
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

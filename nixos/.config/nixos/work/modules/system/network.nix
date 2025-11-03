@@ -7,5 +7,6 @@
   networking.networkmanager.enable = true;
   #networking.networkmanager.dns = "none";
   networking.enableIPv6  = false;
+  networking.interfaces.enp3s0f0.useDHCP = true; 
 }
 

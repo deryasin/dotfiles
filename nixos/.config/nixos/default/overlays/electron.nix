@@ -15,9 +15,9 @@ let
 in
 super:
   {
-    ferdium = enableWayland super.ferdium "ferdium";
-    discord = enableWayland super.discord "discord";
-    vscode = enableWayland super.vscode "code";
-    logseq = enableWayland super.logseq "logseq";
+    #ferdium = enableWayland super.ferdium "ferdium";
+    #discord = enableWayland super.discord "discord";
+    #vscode = enableWayland super.vscode "code";
+    #logseq = enableWayland super.logseq "logseq";
 
   }

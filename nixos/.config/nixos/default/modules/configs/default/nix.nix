@@ -6,13 +6,14 @@
       allowUnfree = true;
       permittedInsecurePackages = [
         "electron-20.3.12"
+        "electron-27.3.11"
       ];
     };
   };
   nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
-      "experimental-features = nix-command flakes";
+    #package = nixVersions.stable;
+    #extraOptions = lib.optionalString (config.nix.package == nixVersions.stable)
+    #  "experimental-features = nix-command flakes";
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };

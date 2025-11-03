@@ -8,27 +8,27 @@ stow --dir $HOME/dotfiles/ --target ~/ nvim
 stow --dir $HOME/dotfiles/ --target ~/ shell
 
 ## Hyde-cli installation
-if [ ! -f $HOME/.local/bin/Hyde ]; then
-	echo "Setup Hyde-cli..."
-	git clone https://github.com/kRHYME7/Hyde-cli.git /tmp/Hyde-cli
-	cd /tmp/Hyde-cli
-	sed -i "s|/bin/env|/usr/bin/env|" {Hyde,Hyde-install,Hyde-tool}
-	make LOCAL=1
-	rm -rf "/tmp/Hyde-cli"
-	cd - >/dev/null 2>&1
-fi
+#if [ ! -f $HOME/.local/bin/Hyde ]; then
+echo "Setup Hyde-cli..."
+git clone https://github.com/kRHYME7/Hyde-cli.git /tmp/Hyde-cli
+cd /tmp/Hyde-cli
+sed -i "s|/bin/env|/usr/bin/env|" {Hyde,Hyde-install,Hyde-tool}
+make LOCAL=1
+rm -rf "/tmp/Hyde-cli"
+cd - >/dev/null 2>&1
+#fi
 
 # Hyprdots installation
-if [ ! -d $HOME/hyprdots ]; then
-	echo "-----------------------------------"
-	echo "Cloning hyprdots..."
-	git clone https://github.com/prasanthrangan/hyprdots.git --depth=1 ~/hyprdots || echo "FATAL ERROR: Git closed" && exit
-	cd ~/hyprdots/Scripts || echo "FATAL ERROR: Could not cd into ~/hyprdots/Scripts" && exit
-	sed -i '/continue\ 2/d' ~/hyprdots/Scripts/restore_cfg.sh
+#if [ ! -d $HOME/hyprdots ]; then
+echo "-----------------------------------"
+echo "Cloning hyprdots..."
+git clone https://github.com/prasanthrangan/hyprdots.git --depth=1 ~/hyprdots || echo "FATAL ERROR: Git closed" && exit
+cd ~/hyprdots/Scripts || echo "FATAL ERROR: Could not cd into ~/hyprdots/Scripts" && exit
+sed -i '/continue\ 2/d' ~/hyprdots/Scripts/restore_cfg.sh
 
-	# Hyde Theme Setup
-	Hyde-install --dir ~/hyprdots --link
-fi
+# Hyde Theme Setup
+Hyde-install --dir ~/hyprdots --link
+#fi
 
 #Pokemon installation
 if [ ! -f $HOME/.local/bin/pokemon-colorscripts ]; then
